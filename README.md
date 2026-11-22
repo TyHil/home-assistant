@@ -8,6 +8,6 @@ Home Assistant setup instructions
 
 1. Follow instructions at https://www.home-assistant.io/installation/linux#docker-compose. Reconcile `docker-compose.yml` from Home Assistant and the repo.
 
-1. Follow instructions at https://github.com/TyHil/cloudflared.git to set up Cloudflared.
+1. Follow instructions at https://github.com/TyHil/cloudflared to set up Cloudflared.
 
 1. Run `docker compose up -d`.
