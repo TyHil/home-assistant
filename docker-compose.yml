@@ -16,3 +16,9 @@ services:
     network_mode: host
     environment:
       TZ: America/Chicago
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8123"]
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 5s
