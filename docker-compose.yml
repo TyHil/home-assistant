@@ -1,14 +1,18 @@
+name: homeassistant
+
 services:
   homeassistant:
-    container_name: homeassistant
+    container_name: home_assistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
+      # Needed for Bluetooth, removed for security
+      #- /run/dbus:/run/dbus:ro
     restart: unless-stopped
     stop_grace_period: 60s
-    privileged: true
+    # Needed for Bluetooth, removed for security
+    #privileged: true
     network_mode: host
     environment:
       TZ: America/Chicago
