@@ -1,0 +1,10 @@
+# Place in /etc/systemd/system/
+[Unit]
+Description=Home Assistant Backup Timer
+
+[Timer]
+OnCalendar=*-*-* 04:05:00
+Unit=home-assistant-backup.service
+
+[Install]
+WantedBy=timers.target
