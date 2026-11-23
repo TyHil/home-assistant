@@ -33,7 +33,7 @@ fi
 cp -a "$HOME_ASSISTANT_BACKUP_PATH/." "$BACKUP_PATH"
 
 ## Send heartbeat
-if [ -n"${KUMA_PUSH_URL_LOCAL:-}" ]; then
+if [ -n "${KUMA_PUSH_URL_LOCAL:-}" ]; then
   curl -fsS -m 10 --retry 3 -G "$KUMA_PUSH_URL_LOCAL" --data-urlencode "status=${KUMA_STATUS_LOCAL:-up}" --data-urlencode "msg=${KUMA_MSG_LOCAL:-OK}" > /dev/null
 fi
 
